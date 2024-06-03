@@ -4,16 +4,26 @@ using Invetker.Models;
 
 namespace Invetker.Controllers;
 
-public class DashboardController : Controller
+public class PortalController : Controller
 {
-  private readonly ILogger<DashboardController> _logger;
+  private readonly ILogger<PortalController> _logger;
 
-  public DashboardController(ILogger<DashboardController> logger)
+  public PortalController(ILogger<PortalController> logger)
   {
     _logger = logger;
   }
 
   public IActionResult Index()
+  {
+    return View();
+  }
+
+  public IActionResult Transactions()
+  {
+    return View();
+  }
+
+  public IActionResult Settings()
   {
     return View();
   }

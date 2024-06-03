@@ -1,6 +1,4 @@
-$("#layout-sider-btn").click(function () {
-  $("body")[0].classList.toggle("slider-collapsed");
-});
+
 
 const chartOptions = {
   credits: {
@@ -109,8 +107,8 @@ $(window).ready(async () => {
         stroke: 'rgba(245, 197, 78, 1)',
         'stroke-width': 1,
         r: 12,
-        paddingTop: 2,
-        paddingBottom: 2,
+        // paddingTop: 2,
+        // paddingBottom: 2,
         paddingLeft: 7,
         paddingRight: 7,
         style: {

@@ -3,11 +3,12 @@
   Layout = "_DashboardLayout";
 }
 @section Styles {
-  <link rel="stylesheet" href="css/dashboard.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
 }
 @section Scripts {
   <script src="https://code.highcharts.com/stock/highstock.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script src="~/js/dashboard.js" asp-append-version="true"></script>
 }
 
 <div class="d-flex flex-row mb-4 gap-4">
@@ -25,7 +26,7 @@
       <div class="notes">Compared to the previous trading day</div>
     </div>
   </div>
-  <div id="portfolio-performance" class="card-wrap position-relative">
+  <div id="portfolio-performance" class="card-wrap position-relative flex-grow-1">
     <div id="chart" class="w-100 h-100"></div>
     <div class="info position-absolute">
       <div class="title">

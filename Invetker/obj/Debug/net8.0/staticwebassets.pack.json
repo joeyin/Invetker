@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
+      "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/css/transactions.css",
+      "PackagePath": "staticwebassets/css/transactions.css"
+    },
+    {
       "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/images/icons/arrow-down.svg",
       "PackagePath": "staticwebassets/images/icons/arrow-down.svg"
+    },
+    {
+      "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/images/icons/calendar.svg",
+      "PackagePath": "staticwebassets/images/icons/calendar.svg"
     },
     {
       "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/images/icons/home.svg",
@@ -61,8 +69,24 @@
       "PackagePath": "staticwebassets/js/dashboard.js"
     },
     {
+      "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/js/portal.js",
+      "PackagePath": "staticwebassets/js/portal.js"
+    },
+    {
       "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/js/transactions.js",
+      "PackagePath": "staticwebassets/js/transactions.js"
+    },
+    {
+      "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/json/nasdaq.json",
+      "PackagePath": "staticwebassets/json/nasdaq.json"
+    },
+    {
+      "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/lib/bootstrap-5-autocomplete/autocomplete.js",
+      "PackagePath": "staticwebassets/lib/bootstrap-5-autocomplete/autocomplete.js"
     },
     {
       "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/lib/bootstrap/LICENSE",

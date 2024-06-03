@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Invetker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8318165de4094c82762aefb4f0ea15b857233875")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87c02a41235f9993c1546bba5b37a8c954cc9d52")]
 [assembly: System.Reflection.AssemblyProductAttribute("Invetker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Invetker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

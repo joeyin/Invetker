@@ -60,6 +60,7 @@ header .dropdown img {
 
 #container aside .nav li {
   padding: 10px 6px;
+  min-height: 48px;
 }
 
 #container aside .nav li span {
@@ -68,16 +69,20 @@ header .dropdown img {
 }
 
 #container aside .nav li a {
-  min-height: 48px;
   color: rgb(var(--gray700));
 }
 
-#container aside .nav li a.active,
 #container aside .nav li a:hover {
+  color: rgb(var(--light));
+}
+
+#container aside .nav li a.active,
+#container .nav-link:focus, .nav-link:hover {
   background-color: rgb(var(--bs-warning-rgb));
   color: rgb(var(--light));
 }
 
+#container aside .nav li a.active svg path#transcations,
 #container aside .nav li a:hover svg path#transcations {
   stroke: rgb(var(--light));
 }
@@ -91,6 +96,10 @@ header .dropdown img {
 
 #container #content {
   padding-left: var(--layout-sider-width);
+}
+
+#container #content main {
+  min-height: 100vh;
 }
 
 body.slider-collapsed #container aside .nav li span {

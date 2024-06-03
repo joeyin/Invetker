@@ -3,7 +3,6 @@
   border-top: 4px solid rgb(var(--bs-warning-rgb));
   box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.07);
   padding: 0;
-  flex: 1;
 }
 
 .card-wrap .info {
@@ -61,12 +60,12 @@
   height: 385px;
 }
 
-table {
+.card-wrap table {
   font-size: 12px;
 }
 
-table th,
-table td {
+.card-wrap table th,
+.card-wrap table td {
   padding: 15px 20px !important;
 }
 
@@ -125,5 +124,3 @@ table td {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
-
-

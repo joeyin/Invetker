@@ -84,12 +84,12 @@
 /Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Invetker.props
 /Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Invetker.props
 /Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/staticwebassets.pack.json
-/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/scopedcss/Views/Shared/_DashboardLayout.cshtml.rz.scp.css
-/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
-/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/scopedcss/bundle/Invetker.styles.css
-/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/scopedcss/projectbundle/Invetker.bundle.scp.css
 /Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/Invetker.dll
 /Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/refint/Invetker.dll
 /Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/Invetker.pdb
 /Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/Invetker.genruntimeconfig.cache
 /Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/ref/Invetker.dll
+/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/scopedcss/Views/Shared/_DashboardLayout.cshtml.rz.scp.css
+/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/scopedcss/bundle/Invetker.styles.css
+/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/obj/Debug/net8.0/scopedcss/projectbundle/Invetker.bundle.scp.css
