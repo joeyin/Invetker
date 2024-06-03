@@ -1,5 +1,7 @@
 # Invetker
 
+![Invetker](https://raw.githubusercontent.com/joeyin/Invetker/8318165de4094c82762aefb4f0ea15b857233875/wwwroot/images/brand.svg)
+
 ## Description
 INVETKER is a beginner-friendly stock tracking platform with a user-friendly interface.
 Tracking your stocks is a breeze with INVETKER. Its clear charts make performance
