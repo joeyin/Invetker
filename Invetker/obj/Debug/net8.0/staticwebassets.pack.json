@@ -85,10 +85,6 @@
       "PackagePath": "staticwebassets/json/nasdaq.json"
     },
     {
-      "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/lib/bootstrap-5-autocomplete/autocomplete.js",
-      "PackagePath": "staticwebassets/lib/bootstrap-5-autocomplete/autocomplete.js"
-    },
-    {
       "Id": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/lib/bootstrap/LICENSE",
       "PackagePath": "staticwebassets/lib/bootstrap"
     },

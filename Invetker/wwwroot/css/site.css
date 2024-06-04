@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 :root {
+  --bs-primary: 245, 197, 78;
   --bs-warning-rgb: 245, 197, 78;
   --bs-secondary-rgb: 0, 50, 55;
   --bs-danger-rgb: 255, 0, 0;
@@ -11,6 +12,7 @@
   --gray150: 234, 234, 234;
   --gray500: 180, 180, 180;
   --gray700: 99, 101, 102;
+  --gray800: 71, 71, 71;
 
   --layout-sider-width: 236px;
   --layout-sider-collasped-width: 70px;
@@ -102,4 +104,40 @@ section:not(:last-child) {
 
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: rgb(var(--light-gray));
+}
+
+.form-control:focus {
+  border-color: rgb(var(--bs-warning-rgb));
+}
+
+.form-select:focus {
+  border-color: rgb(var(--bs-warning-rgb));
+  box-shadow: none;
+}
+
+#container #content main {
+  min-height: 100vh;
+}
+
+#container #content .breadcrumb {
+  background-color: rgb(238 238 238);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(99, 101, 102, 1);
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+  background-color: rgb(var(--bs-warning-rgb)) !important;
+}
+
+.form-label.required::before {
+  content: '* ';
+  color: rgb(var(--bs-danger-rgb));
+}
+
+.modal-open .modal-backdrop {
+  backdrop-filter: blur(1.68px);
+  background-color: rgb(255 255 255 / 68%);
+  opacity: .8;
 }

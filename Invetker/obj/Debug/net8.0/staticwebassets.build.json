@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/dd6RDWEgd8+StCR8kMQghCOx7qyfOQIldkkfFHDT8A=",
+  "Hash": "Tz2M8YUCBYRzK26lrNDdy9s1oXk9AnAl8cLqdh2tAXE=",
   "Source": "Invetker",
   "BasePath": "_content/Invetker",
   "Mode": "Default",
@@ -433,25 +433,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/json/nasdaq.json"
-    },
-    {
-      "Identity": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/lib/bootstrap-5-autocomplete/autocomplete.js",
-      "SourceId": "Invetker",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/",
-      "BasePath": "_content/Invetker",
-      "RelativePath": "lib/bootstrap-5-autocomplete/autocomplete.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/lib/bootstrap-5-autocomplete/autocomplete.js"
     },
     {
       "Identity": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

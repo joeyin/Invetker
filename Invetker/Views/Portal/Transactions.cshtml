@@ -12,64 +12,186 @@
   <script type="module" src="~/js/transactions.js"></script>
 }
 
-<div class="row mb-4 align-items-center">
-  <div class="col-auto">
-    <label class="col-form-label" for="daterange">Date Range</label>
-  </div>
-  <div class="col-auto">
-    <div class="input-group">
-      <input type="text" class="form-control" name="daterange" />
-      <span class="input-group-text" id="basic-addon1">
-        <img src="~/images/icons/calendar.svg" />
-      </span>
+<nav class="px-4 py-3 mb-4 breadcrumb" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item d-flex align-items-center gap-3">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="transcations" d="M1.66663 5.83334H16.6666M13.3333 1.66667L17.5 5.83334L13.3333 10M18.3333 14.1667H3.33329M6.66663 10L2.49996 14.1667L6.66663 18.3333" stroke="#636566" stroke-width="1.5"/>
+      </svg>
+      Transactions
+    </li>
+  </ol>
+</nav>
+
+<div class="modal fade" id="transaction-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="transaction-modal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="manually-tab" data-bs-toggle="tab" data-bs-target="#manually-tab-pane" type="button" role="tab" aria-controls="manually-tab-pane" aria-selected="true">Manually Add</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="import-tab" data-bs-toggle="tab" data-bs-target="#import-tab-pane" type="button" role="tab" aria-controls="import-tab-pane" aria-selected="false">Import</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="manually-tab-pane" role="tabpanel" aria-labelledby="manually-tab" tabindex="0">
+            <form name="add" method="POST">
+              <div class="mb-3">
+                <label for="ticker" class="form-label required">Ticker :</label>
+                <input type="text" class="form-control w-100" id="ticker" placeholder="">
+              </div>
+              <div class="mb-3">
+                <label for="quantity" class="form-label required">Quantity:</label>
+                <input type="number" class="form-control" id="quantity" placeholder="">
+              </div>
+              <div class="mb-3">
+                <label for="action" class="form-label required">Action:</label>
+                <select class="form-select">
+                  <option selected>Bought</option>
+                  <option>Sold</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label required">Price:</label>
+                <input type="number" class="form-control" id="price" placeholder="">
+              </div>
+              <div class="mb-3">
+                <label for="fee" class="form-label required">Fee:</label>
+                <input type="number" class="form-control" id="fee" placeholder="">
+              </div>
+              <div class="mb-3">
+                <label for="amount" class="form-label">Amount:</label>
+                <input type="number" class="form-control" id="amount" disabled>
+              </div>
+              <div class="mb-3">
+                <label for="datetime" class="form-label required">Date and Time:</label>
+                <input type="text" class="form-control" id="datetime">
+              </div>
+              <div class="mb-3">
+                <label for="notes" class="form-label">Notes:</label>
+                <textarea class="form-control" id="notes" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="import-tab-pane" role="tabpanel" aria-labelledby="import-tab" tabindex="0">
+            <form name="import" method="POST">
+              <div class="mb-3">
+                <label for="action" class="form-label required">Action:</label>
+                <select class="form-select">
+                  <option selected>InteractiveBrokers</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="action" class="form-label required">File (CSV Only):</label>
+                <div class="clearfix"></div>
+                <button type="button" class="btn btn-outline-secondary py-2 px-3">
+                  <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="upload" d="M5.95455 3.58532H7.63409V11.2732C7.63409 11.3732 7.71591 11.455 7.81591 11.455H9.17955C9.27955 11.455 9.36136 11.3732 9.36136 11.2732V3.58532H11.0455C11.1977 3.58532 11.2818 3.41033 11.1886 3.29216L8.64318 0.0697542C8.62617 0.0480251 8.60444 0.0304518 8.57964 0.0183663C8.55483 0.00628079 8.5276 0 8.5 0C8.4724 0 8.44517 0.00628079 8.42036 0.0183663C8.39556 0.0304518 8.37383 0.0480251 8.35682 0.0697542L5.81136 3.28989C5.71818 3.41033 5.80227 3.58532 5.95455 3.58532ZM16.8182 10.5914H15.4545C15.3545 10.5914 15.2727 10.6733 15.2727 10.7732V14.2729H1.72727V10.7732C1.72727 10.6733 1.64545 10.5914 1.54545 10.5914H0.181818C0.0818182 10.5914 0 10.6733 0 10.7732V15.2728C0 15.675 0.325 16 0.727273 16H16.2727C16.675 16 17 15.675 17 15.2728V10.7732C17 10.6733 16.9182 10.5914 16.8182 10.5914Z" fill="#636566"/>
+                  </svg>
+                  <span class="ms-2">Upload</span>
+                </button>
+              </div>
+              <div class="mb-3">
+                <label for="notes" class="form-label">Notes:</label>
+                <textarea class="form-control" id="notes" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-warning text-light">Save</button>
+      </div>
     </div>
-  </div>
-  <div class="col-auto">
-    <label class="col-form-label" for="ticker">Ticker</label>
-  </div>
-  <div class="col-auto">
-    <input id="ticker" class="form-control " type="text">
+    @* <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div> *@
   </div>
 </div>
 
-<div id="transactions" class="card-wrap d-flex flex-column">
-  <div class="title">Transactions</div>
-  <div class="content table-thead-fixed flex-grow-1">
-    <table class="table table-striped table-hover table-borderless table-thead-uppercase">
-      <thead>
-        <tr>
-          <th scope="col">Ticker</th>
-          <th scope="col">Action</th>
-          <th scope="col">Position</th>
-          <th scope="col">Status</th>
-          <th scope="col">Price</th>
-          <th scope="col">Fee</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Date Time</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>TSLA</td>
-          <td>Bought</td>
-          <td>10</td>
-          <td>Filled</td>
-          <td>172.14</td>
-          <td>1.7214</td>
-          <td>1738.614</td>
-          <td>2024-05-13 14:30:05</td>
-        </tr>
-        <tr>
-          <td>TSLA</td>
-          <td>Bought</td>
-          <td>10</td>
-          <td>Filled</td>
-          <td>172</td>
-          <td>1.72</td>
-          <td>1721.72</td>
-          <td>2024-05-13 14:20:22</td>
-        </tr>
-      </tbody>
-    </table>
+<main class="px-4 pb-4 flex-grow-1 d-flex flex-column">
+  <form name="search" class="row mb-4 align-items-center">
+    <div class="col-auto">
+      <label class="col-form-label" for="daterange">Date Range</label>
+    </div>
+    <div class="col-auto">
+      <div class="input-group" id="daterangepicker">
+        <input type="text" class="form-control" name="daterange" />
+        <span class="input-group-text bg-light">
+          <img src="~/images/icons/calendar.svg" />
+        </span>
+      </div>
+    </div>
+    <div class="col-auto">
+      <label class="col-form-label" for="ticker">Ticker</label>
+    </div>
+    <div class="col-auto">
+      <input id="ticker" class="form-control " type="text">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-warning px-4">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="Search">
+            <path id="Search_2" d="M18.4444 20L11.4444 13C10.8889 13.4444 10.25 13.7963 9.52778 14.0556C8.80556 14.3148 8.03704 14.4444 7.22222 14.4444C5.2037 14.4444 3.49556 13.7452 2.09778 12.3467C0.700001 10.9481 0.000741329 9.24 5.8789e-07 7.22222C-0.000740153 5.20444 0.698519 3.4963 2.09778 2.09778C3.49704 0.699259 5.20519 0 7.22222 0C9.23926 0 10.9478 0.699259 12.3478 2.09778C13.7478 3.4963 14.4467 5.20444 14.4444 7.22222C14.4444 8.03704 14.3148 8.80556 14.0556 9.52778C13.7963 10.25 13.4444 10.8889 13 11.4444L20 18.4444L18.4444 20ZM7.22222 12.2222C8.61111 12.2222 9.79185 11.7363 10.7644 10.7644C11.737 9.79259 12.223 8.61185 12.2222 7.22222C12.2215 5.83259 11.7356 4.65222 10.7644 3.68111C9.79333 2.71 8.61259 2.2237 7.22222 2.22222C5.83185 2.22074 4.65148 2.70704 3.68111 3.68111C2.71074 4.65519 2.22445 5.83556 2.22222 7.22222C2.22 8.60889 2.7063 9.78963 3.68111 10.7644C4.65593 11.7393 5.8363 12.2252 7.22222 12.2222Z" fill="white"/>
+          </g>
+        </svg>
+        <span class="ms-2 text-light">Search</span>
+      </button>
+    </div>
+  </form>
+
+  <div id="transactions" class="card-wrap d-flex flex-column flex-grow-1">
+    <div class="title">Transactions</div>
+    <div class="content table-thead-fixed flex-grow-1">
+      <table class="table table-striped table-hover table-borderless table-thead-uppercase">
+        <thead>
+          <tr>
+            <th scope="col">Ticker</th>
+            <th scope="col">Action</th>
+            <th scope="col">Position</th>
+            <th scope="col">Status</th>
+            <th scope="col">Price</th>
+            <th scope="col">Fee</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Date Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TSLA</td>
+            <td>Bought</td>
+            <td>10</td>
+            <td>Filled</td>
+            <td>172.14</td>
+            <td>1.7214</td>
+            <td>1738.614</td>
+            <td>2024-05-13 14:30:05</td>
+          </tr>
+          <tr>
+            <td>TSLA</td>
+            <td>Bought</td>
+            <td>10</td>
+            <td>Filled</td>
+            <td>172</td>
+            <td>1.72</td>
+            <td>1721.72</td>
+            <td>2024-05-13 14:20:22</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
+</main>
