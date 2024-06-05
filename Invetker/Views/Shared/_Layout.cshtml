@@ -12,6 +12,42 @@
 </head>
 
 <body>
+  <div id="userModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form name="login" class="needs-validation" method="POST" novalidate>
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="name" class="form-label required">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label required">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label required">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+              <label for="confirm-password" class="form-label required">Confirm Password</label>
+              <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
+              <div class="custom-invalid-feedback">Passwords do not match</div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-warning text-light">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-warning">
       <div class="container">
@@ -37,7 +73,7 @@
               <a class="nav-link text-dark" asp-area="" asp-controller="contact" asp-action="index">Contact</a>
             </li>
           </ul>
-          <a class="btn btn-outline-dark rounded-0 px-4" asp-area="" asp-controller="portal" asp-action="index">SIGN/UP</a>
+          <button id="signinup" class="btn btn-outline-dark rounded-0 px-4">SIGN IN/UP</button>
         </div>
       </div>
     </nav>

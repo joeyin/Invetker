@@ -136,8 +136,21 @@ section:not(:last-child) {
   color: rgb(var(--bs-danger-rgb));
 }
 
+form label {
+  font-size: 14px;
+  color: rgb(var(--gray800));
+}
+
 .modal-open .modal-backdrop {
   backdrop-filter: blur(1.68px);
   background-color: rgb(255 255 255 / 68%);
   opacity: .8;
+}
+
+.custom-invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: .875em;
+  color: rgb(var(--bs-danger-rgb));
 }

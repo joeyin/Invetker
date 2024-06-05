@@ -58,8 +58,3 @@
   color: rgb(var(--bs-warning-rgb));
   border-bottom: 2px solid rgb(var(--bs-warning-rgb));
 }
-
-form label {
-  font-size: 14px;
-  color: rgb(var(--gray800));
-}

@@ -1,0 +1,40 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Invetker",
+    "version": "1.0"
+  },
+  "paths": {
+    "/user/register": {
+      "post": {
+        "summary": "POST /user/register",
+        "responses": {
+          "200": {}
+        },
+        "tags": ["User"],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "body",
+            "required": true,
+            "type": "string",
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "body",
+            "required": true
+          },
+          {
+            "name": "password",
+            "in": "body",
+            "required": true
+          }
+        ]
+      }
+    }
+  }
+}

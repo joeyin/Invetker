@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Tz2M8YUCBYRzK26lrNDdy9s1oXk9AnAl8cLqdh2tAXE=",
+  "Hash": "7v7MJ9fRDfTKda+OWR20HU0mm3rcYn9MR04rejYTtjE=",
   "Source": "Invetker",
   "BasePath": "_content/Invetker",
   "Mode": "Default",
@@ -1516,6 +1516,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/swagger-ui/v1/swagger.json",
+      "SourceId": "Invetker",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/chiweiyin/Projects/Humber/HTTP5226/Invetker/Invetker/wwwroot/",
+      "BasePath": "_content/Invetker",
+      "RelativePath": "swagger-ui/v1/swagger.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/swagger-ui/v1/swagger.json"
     }
   ]
 }
