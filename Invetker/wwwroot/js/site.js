@@ -1,35 +1,58 @@
-﻿$(window).ready(function() {
+﻿$(window).ready(async() => {
 
-  var userModal = new bootstrap.Modal('#userModal');
+  var el = document.getElementById('user-modal');
+  var modal = new bootstrap.Modal(el);
 
-  $("#signinup").click(function() {
-    userModal.show();
+  el.addEventListener('hidden.bs.modal', function () {
+    $(this).find('form').trigger('reset');
+  });
+
+  $("#signinup,#start-now").click(function() {
+    modal.show();
   });
 
   document.querySelector("form[name='login']").onsubmit = function (e) {
     e.preventDefault();
-
     this.classList.add('was-validated');
-    $("#confirm-password").parent().find(".custom-invalid-feedback:eq(0)").hide();
 
-    if ($("#password").val().trim() !== $("#confirm-password").val().trim()) {
-      $("#confirm-password").get(0).setCustomValidity('no match');
-      $("#confirm-password").parent().find(".custom-invalid-feedback:eq(0)").show();
-      return;
+    if (this.checkValidity()) {
+      $.ajax({
+        method: "POST",
+        url: "user/login",
+        data: Object.fromEntries(new FormData(e.target))
+      }).done(function() {
+        userModal.hide();
+      }).fail(function(error) {
+        console.error(JSON.stringify(error));
+      });
+    }
+  }
+
+  document.querySelector("form[name='register']").onsubmit = function (e) {
+    e.preventDefault();
+    this.classList.add('was-validated');
+
+    var password = document.getElementById("password");
+    var confirmPassword = document.getElementById("confirm-password");
+    var confirmPasswordInvalid = document.querySelector("#confirm-password+.custom-invalid-feedback")
+
+    if (password.value.trim() !== confirmPassword.value.trim()) {
+      confirmPassword.setCustomValidity('no match');
+      confirmPasswordInvalid.style.display = 'block';
+    } else {
+      confirmPassword.setCustomValidity('');
+      confirmPasswordInvalid.style.display = 'none';
     }
 
-    if (document.querySelector("form[name='login']").checkValidity()) {
+    if (this.checkValidity()) {
       $.ajax({
         method: "POST",
         url: "user/register",
-        data: {
-          name: $("#name").val().trim(),
-          email: $("#email").val().trim(),
-          password: $("#password").val().trim(),
-        }
+        data: Object.fromEntries(new FormData(e.target))
       }).done(function() {
         userModal.hide();
-        console.log('success')
+      }).fail(function(error) {
+        console.error(JSON.stringify(error));
       });
     }
   }

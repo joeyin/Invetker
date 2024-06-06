@@ -26,35 +26,3 @@
 #ticker {
   width: 300px;
 }
-
-#transaction-modal .modal-content {
-  border-radius: 6px;
-  border: 1px solid rgb(var(--gray500));
-  box-shadow: 0px 4px 7px 0px rgba(186, 186, 186, 0.25);
-}
-
-#transaction-modal .modal-body {
-  padding: 15px 32px 15px 32px;
-}
-
-#transaction-modal .modal-body #myTabContent {
-  max-height: 580px;
-  overflow: auto;
-}
-
-.nav-tabs {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.nav-tabs .nav-link {
-  border: 0;
-  font-size: 14px;
-  color: rgb(var(--secondary));
-  border-bottom: 2px solid transparent;
-}
-
-.nav-tabs .nav-link:hover,
-.nav-tabs .nav-link.active {
-  color: rgb(var(--bs-warning-rgb));
-  border-bottom: 2px solid rgb(var(--bs-warning-rgb));
-}

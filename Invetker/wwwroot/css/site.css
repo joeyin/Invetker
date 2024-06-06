@@ -144,7 +144,7 @@ form label {
 .modal-open .modal-backdrop {
   backdrop-filter: blur(1.68px);
   background-color: rgb(255 255 255 / 68%);
-  opacity: .8;
+  opacity: 1.6;
 }
 
 .custom-invalid-feedback {
@@ -153,4 +153,39 @@ form label {
   margin-top: .25rem;
   font-size: .875em;
   color: rgb(var(--bs-danger-rgb));
+}
+
+.modal-dialog.with-nav-tab .nav-link {
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: rgb(var(--secondary));
+  font-size: 14px;
+  padding: 15px 20px;
+}
+
+.modal-dialog.with-nav-tab .nav-link:hover,
+.modal-dialog.with-nav-tab .nav-link.active {
+  border-color: rgb(var(--bs-warning-rgb));
+  color: rgb(var(--bs-warning-rgb));
+}
+
+.modal-dialog.with-nav-tab .modal-footer>* {
+  margin-right: .75rem;
+}
+
+.modal-dialog.with-nav-tab .modal-footer>*:last-child {
+  margin: 0;
+}
+
+.btn-icon.btn-outline-secondary {
+  fill: rgb(var(--bs-secondary-rgb));
+}
+
+.btn-icon.btn-outline-secondary:hover {
+  fill: rgb(var(--bs-light-rgb));
+}
+
+.custom-file-button input[type=file]::file-selector-button,
+.custom-file-button input[type=file]::-webkit-file-upload-button {
+  display: none;
 }

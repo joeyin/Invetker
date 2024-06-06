@@ -59,8 +59,7 @@ header .dropdown img {
 }
 
 #container aside .nav li {
-  padding: 10px 6px;
-  min-height: 48px;
+  margin: 10px 6px 0;
 }
 
 #container aside .nav li span {
@@ -70,6 +69,7 @@ header .dropdown img {
 
 #container aside .nav li a {
   color: rgb(var(--gray700));
+  height: 45px;
 }
 
 #container aside .nav li a:hover {
