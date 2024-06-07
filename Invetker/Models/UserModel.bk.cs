@@ -1,8 +1,6 @@
 namespace Invetker.Models;
 
 using System;
-using System.Data;
-using System.Web;
 using MySql.Data.MySqlClient;
 
 public class User
@@ -33,7 +31,8 @@ public class User
   public (bool success, string? message) Create(User NewUser)
   {
     //Exit method if model fields are not included.
-    if (!IsValid(NewUser)) {
+    if (!IsValid(NewUser))
+    {
       //Console.WriteLine("Incomplete data.");
       return (false, "Incomplete data.");
       // throw new ApplicationException("Incomplete data.");
@@ -62,7 +61,8 @@ public class User
       //Catches issues with MySQL.
       return (false, ex.ToString());
     }
-    catch (Exception ex) {
+    catch (Exception ex)
+    {
       return (false, ex.ToString());
     }
     finally

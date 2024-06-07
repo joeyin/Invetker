@@ -15,11 +15,13 @@ public class PortalController : Controller
 
   public IActionResult Index()
   {
+    TempData["slider-collapsed"] = Request.Cookies["slider-collapsed"];
     return View();
   }
 
   public IActionResult Transactions()
   {
+    TempData["slider-collapsed"] = Request.Cookies["slider-collapsed"];
     return View();
   }
 
