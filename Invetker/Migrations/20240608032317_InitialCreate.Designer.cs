@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Invetker.Migrations
 {
     [DbContext(typeof(InvetkerContext))]
-    [Migration("20240608031405_InitialCreate")]
+    [Migration("20240608032317_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
