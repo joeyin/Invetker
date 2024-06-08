@@ -17,12 +17,12 @@ public class UserController : Controller
   [HttpPost]
   public IActionResult Register(string Name, string Email, string Password)
   {
-    User UserModal = new User();
-    UserModal.Name = Name;
-    UserModal.Email = Email;
-    UserModal.Password = Password;
+    UserModel User = new UserModel();
+    User.Name = Name;
+    User.Email = Email;
+    User.Password = Password;
 
-    var result = UserModal.Create(UserModal);
+    var result = User.Create(User);
 
     if (result.success) {
       return Ok(result);

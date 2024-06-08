@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Invetker;
 
@@ -7,7 +8,9 @@ public class TransactionModel
   [Key]
   public int Id { get; set; }
 
-  public int UserId { get; set; }
+  public virtual UserModel User { get; set; }
+  [ForeignKey(nameof(Id))]
+  public int ClasseId { get; set; }
 
   public string Ticker { get; set; }
 
@@ -24,7 +27,7 @@ public class TransactionModel
 
   public string? Notes { get; set; }
 
-  public DateTime CreatedAt { get; set; }
+  public DateTime CreatedAt { get; set; } = DateTime.Now;
 }
 
 public enum ActionType

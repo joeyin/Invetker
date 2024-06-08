@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Invetker.Models;
 
 namespace Invetker;
 
@@ -7,7 +9,9 @@ public class PerformanceModel
   [Key]
   public int Id { get; set; }
 
-  public int UserId { get; set; }
+  public virtual UserModel User { get; set; }
+  [ForeignKey(nameof(Id))]
+  public int ClasseId { get; set; }
 
   // Total user deposit
   public float TotalDeposit { get; set; }
@@ -18,5 +22,5 @@ public class PerformanceModel
   // Unresized portfolio / Total user deposit
   public float Rate { get; set; }
 
-  public DateTime CreatedAt { get; set; }
+  public DateTime CreatedAt { get; set; } = DateTime.Now;
 }
