@@ -1,9 +1,11 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Invetker.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Invetker.Controllers;
 
+[Authorize]
 public class PortalController : Controller
 {
   private readonly ILogger<PortalController> _logger;

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Invetker.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Invetker;
 
@@ -9,7 +10,7 @@ public class PerformanceModel
   [Key]
   public int Id { get; set; }
 
-  public virtual UserModel User { get; set; }
+  public virtual UserModel UserModel { get; set; }
   [ForeignKey(nameof(Id))]
   public int ClasseId { get; set; }
 

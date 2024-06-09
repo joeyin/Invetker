@@ -21,7 +21,8 @@
         url: "user/login",
         data: Object.fromEntries(new FormData(e.target))
       }).done(function() {
-        userModal.hide();
+        modal.hide();
+        location.href = 'portal';
       }).fail(function(error) {
         console.error(JSON.stringify(error));
       });
@@ -50,7 +51,8 @@
         url: "user/register",
         data: Object.fromEntries(new FormData(e.target))
       }).done(function() {
-        userModal.hide();
+        alert('Account registered successfully!');
+        modal.hide();
       }).fail(function(error) {
         console.error(JSON.stringify(error));
       });
