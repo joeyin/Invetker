@@ -53,13 +53,17 @@ public class UserController : Controller
   public async Task<IActionResult> Login(string Email, string Password)
   {
     var user = await _userManager.FindByEmailAsync(Email);
-    if (user == null) {
+
+    if (user == null || user.UserName == null)
+    {
       Response.StatusCode = (int)System.Net.HttpStatusCode.Unauthorized;
       return Json(new { success = false, messages = "Incorrect username or password." });
     }
 
     var result = await _signInManager.PasswordSignInAsync(user.UserName, Password, false, lockoutOnFailure: false);
-    if (result.Succeeded) {
+
+    if (result.Succeeded)
+    {
       await _signInManager.SignInAsync(user,
         new AuthenticationProperties()
         {
@@ -69,7 +73,9 @@ public class UserController : Controller
           IsPersistent = true
         });
       return Ok(new { success = true });
-    } else {
+    }
+    else
+    {
       Response.StatusCode = (int)System.Net.HttpStatusCode.Unauthorized;
       return Json(new { success = false, messages = result });
     }

@@ -12,7 +12,7 @@ public class PerformanceModel
 
   public virtual UserModel UserModel { get; set; }
   [ForeignKey(nameof(Id))]
-  public int ClasseId { get; set; }
+  public int UserModelId { get; set; }
 
   // Total user deposit
   public float TotalDeposit { get; set; }

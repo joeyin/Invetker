@@ -2,7 +2,7 @@
 
 namespace Invetker;
 
-public class UserModel: IdentityUser
+public class UserModel: IdentityUser<int>
 {
   // For Personal Page use, example: invetker.com/user/{hashId}
   public string? HashId { get; set; }

@@ -10,7 +10,6 @@
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
   <script src="~/js/dashboard.js" asp-append-version="true"></script>
 }
-
 <nav class="px-4 py-3 mb-4 breadcrumb" aria-label="breadcrumb">
   <ol class="breadcrumb mb-0">
     <li class="breadcrumb-item d-flex align-items-center gap-2">
@@ -101,8 +100,7 @@
             <tr>
               <th scope="col">Ticker</th>
               <th scope="col">Action</th>
-              <th scope="col">Position</th>
-              <th scope="col">Status</th>
+              <th scope="col">Quantity</th>
               <th scope="col">Price</th>
               <th scope="col">Fee</th>
               <th scope="col">Amount</th>
@@ -110,26 +108,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>TSLA</td>
-              <td>Bought</td>
-              <td>10</td>
-              <td>Filled</td>
-              <td>172.14</td>
-              <td>1.7214</td>
-              <td>1738.614</td>
-              <td>2024-05-13 14:30:05</td>
-            </tr>
-            <tr>
-              <td>TSLA</td>
-              <td>Bought</td>
-              <td>10</td>
-              <td>Filled</td>
-              <td>172</td>
-              <td>1.72</td>
-              <td>1721.72</td>
-              <td>2024-05-13 14:20:22</td>
-            </tr>
+            @foreach (TransactionModel transaction in Model.transactions.data)
+            {
+              <tr>
+                <td>@transaction.Ticker</td>
+                <td>@transaction.Action</td>
+                <td>@transaction.Quantity.ToString("n3")</td>
+                <td>@transaction.Price.ToString("n3")</td>
+                <td>@transaction.Fee.ToString("n3")</td>
+                <td>@(((@transaction.Price * @transaction.Quantity) + @transaction.Fee).ToString("n3"))</td>
+                <td>@transaction.Datetime</td>
+              </tr>
+            }
           </tbody>
         </table>
       </div>

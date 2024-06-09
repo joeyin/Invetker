@@ -48,7 +48,7 @@ $(function() {
     if (this.checkValidity()) {
       $.ajax({
         method: "POST",
-        url: "transaction/add",
+        url: "/transaction/add",
         data: Object.fromEntries(new FormData(e.target))
       }).done(function() {
         transactionModal.hide();

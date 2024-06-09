@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Invetker;
 
-public class InvetkerContext : IdentityDbContext
+public class InvetkerContext : IdentityDbContext<UserModel, IdentityRole<int>, int>
 {
   static readonly string connectionString = "Server=localhost;Port=8889;User=root;Password=root;Database=invetker";
 

@@ -2,29 +2,42 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Invetker.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Runtime.InteropServices.JavaScript;
+using System.Web;
 
 namespace Invetker.Controllers;
 
 [Authorize]
-public class PortalController : Controller
+public class PortalController : TransactionController
 {
-  private readonly ILogger<PortalController> _logger;
 
-  public PortalController(ILogger<PortalController> logger)
+  public PortalController(ILogger<TransactionController> logger, InvetkerContext context) : base(logger, context)
   {
-    _logger = logger;
   }
 
-  public IActionResult Index()
+  public async Task<IActionResult> Index()
   {
     TempData["slider-collapsed"] = Request.Cookies["slider-collapsed"];
-    return View();
+
+    var model = new {
+      transactions = await this.List()
+    };
+
+    return View(model);
   }
 
-  public IActionResult Transactions()
+  [HttpGet]
+  public async Task<IActionResult> Transactions(string daterange)
   {
     TempData["slider-collapsed"] = Request.Cookies["slider-collapsed"];
-    return View();
+
+    _logger.LogInformation("range:" + daterange);
+
+    var model = new {
+      transactions = await this.List()
+    };
+
+    return View(model);
   }
 
   public IActionResult Settings()

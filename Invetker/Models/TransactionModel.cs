@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Identity;
 
 namespace Invetker;
 
@@ -11,7 +10,7 @@ public class TransactionModel
 
   public virtual UserModel UserModel { get; set; }
   [ForeignKey(nameof(Id))]
-  public int ClasseId { get; set; }
+  public int UserModelId { get; set; }
 
   public string Ticker { get; set; }
 
@@ -24,7 +23,7 @@ public class TransactionModel
   public float Fee { get; set; }
 
   // Transaction time
-  public string Datetime { get; set; }
+  public DateTime Datetime { get; set; }
 
   public string? Notes { get; set; }
 

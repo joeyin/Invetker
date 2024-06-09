@@ -40,38 +40,34 @@
             <div class="px-4">
               <div class="mb-3">
                 <label for="ticker" class="form-label required">Ticker :</label>
-                <input type="text" class="form-control w-100" id="ticker" placeholder="" required>
+                <input type="text" class="form-control w-100" id="ticker" name="ticker" placeholder="" required>
               </div>
               <div class="mb-3">
                 <label for="quantity" class="form-label required">Quantity:</label>
-                <input type="number" class="form-control" id="quantity" placeholder="" required>
+                <input type="number" class="form-control" id="quantity" step="any" name="quantity" placeholder="" required>
               </div>
               <div class="mb-3">
                 <label for="action" class="form-label required">Action:</label>
-                <select class="form-select" required>
+                <select class="form-select" name="action" required>
                   <option selected>Bought</option>
                   <option>Sold</option>
                 </select>
               </div>
               <div class="mb-3">
                 <label for="price" class="form-label required">Price:</label>
-                <input type="number" class="form-control" id="price" placeholder="" required>
+                <input type="number" class="form-control" id="price" step="any" name="price" placeholder="" required>
               </div>
               <div class="mb-3">
                 <label for="fee" class="form-label required">Fee:</label>
-                <input type="number" class="form-control" id="fee" placeholder="" required>
-              </div>
-              <div class="mb-3">
-                <label for="amount" class="form-label">Amount:</label>
-                <input type="number" class="form-control" id="amount" disabled>
+                <input type="number" class="form-control" id="fee" step="any" name="fee" placeholder="" required>
               </div>
               <div class="mb-3">
                 <label for="datetime" class="form-label required">Date and Time:</label>
-                <input type="text" class="form-control" id="datetime" required>
+                <input type="text" class="form-control" id="datetime" name="datetime" required>
               </div>
               <div class="mb-3">
                 <label for="notes" class="form-label">Notes:</label>
-                <textarea class="form-control" id="notes" rows="3"></textarea>
+                <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
               </div>
             </div>
             <div class="modal-footer px-4">
@@ -170,8 +166,7 @@
           <tr>
             <th scope="col">Ticker</th>
             <th scope="col">Action</th>
-            <th scope="col">Position</th>
-            <th scope="col">Status</th>
+            <th scope="col">Quantity</th>
             <th scope="col">Price</th>
             <th scope="col">Fee</th>
             <th scope="col">Amount</th>
@@ -179,26 +174,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>TSLA</td>
-            <td>Bought</td>
-            <td>10</td>
-            <td>Filled</td>
-            <td>172.14</td>
-            <td>1.7214</td>
-            <td>1738.614</td>
-            <td>2024-05-13 14:30:05</td>
-          </tr>
-          <tr>
-            <td>TSLA</td>
-            <td>Bought</td>
-            <td>10</td>
-            <td>Filled</td>
-            <td>172</td>
-            <td>1.72</td>
-            <td>1721.72</td>
-            <td>2024-05-13 14:20:22</td>
-          </tr>
+          @foreach (TransactionModel transaction in Model.transactions.data)
+          {
+            <tr>
+              <td>@transaction.Ticker</td>
+              <td>@transaction.Action</td>
+              <td>@transaction.Quantity.ToString("n3")</td>
+              <td>@transaction.Price.ToString("n3")</td>
+              <td>@transaction.Fee.ToString("n3")</td>
+              <td>@(((@transaction.Price * @transaction.Quantity) + @transaction.Fee).ToString("n3"))</td>
+              <td>@transaction.Datetime</td>
+            </tr>
+          }
         </tbody>
       </table>
     </div>

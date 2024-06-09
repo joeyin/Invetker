@@ -1,4 +1,5 @@
 using Invetker;
+using Invetker.Controllers;
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
